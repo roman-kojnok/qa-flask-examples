@@ -18,7 +18,7 @@ list_items = [
         'id': 1,
         'list_id': 1,
         'title': 'OK Computer',
-        'creator': 'Radiohead'
+        'creator': 'Radio-head'
     },
     {
         'id': 2,
@@ -41,7 +41,7 @@ list_items = [
     {
         'id': 5,
         'list_id': 2,
-        'title': 'Infomocracy',
+        'title': 'Info-democracy',
         'creator': 'Malka Older'
     },
     {
