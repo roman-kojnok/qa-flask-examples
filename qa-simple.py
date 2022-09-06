@@ -1,11 +1,12 @@
 from flask import Flask
+
 app = Flask(__name__)
 
 
-@app.route('/number', methods=['GET'])
-def number():
-    return 3
+@app.route('/')
+def home():
+    return "Hello, finally, I get it!"
 
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(debug=True)
