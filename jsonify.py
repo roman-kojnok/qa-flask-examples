@@ -1,21 +1,21 @@
-from flask import jsonify, Flask
-import json
-
-appFlask = Flask(__name__)
+from flask import Flask, jsonify
+app = Flask(__name__)
 
 
-@appFlask.route('/home_jsonify')
-def home_jsonify():
-    dict = {'username': 'eduCBA', 'account': 'Premium', 'validity': '2709 days'}
-    return jsonify(dict)
+@app.route('/')
+def index():
+    return '<h1>Hello, World!</h1>'
 
 
-@appFlask.route('/home_dumps')
-def home_dumps():
-    dict = {'username': 'eduCBA', 'account': 'Premium', 'validity': '2709 days'}
-    return json.dumps(dict)
+@app.route('/home')
+def home():
+    return '<h1>You are on the home page!</h1>'
 
 
-if __name__ == "__main__":
-    appFlask.run(debug=True)
+@app.route('/json')
+def json():
+    return jsonify({'key' : 'value', 'listkey': [1, 2, 3, 4, 5, 10]})
 
+
+if __name__ == '__main__':
+    app.run(debug=True)
