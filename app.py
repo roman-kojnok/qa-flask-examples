@@ -1,6 +1,5 @@
 from flask import Flask, jsonify
 from flask_restful import Resource, Api, abort
-
 from mock_data import lists, list_items
 
 app = Flask(__name__)
@@ -15,9 +14,9 @@ class HelloWorld(Resource):
 api.add_resource(HelloWorld, '/')
 
 
-class GetLists(Resource):
+class GetLists("lists"):
     def get(self):
-        return {'lists': lists}
+        return jsonify({'lists': lists})
 
 
 api.add_resource(GetLists, '/lists')
